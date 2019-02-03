@@ -15,7 +15,10 @@
     "babel-register": "^6.26.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.3.1",
