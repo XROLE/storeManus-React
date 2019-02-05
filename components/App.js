@@ -3,10 +3,10 @@ import {
   BrowserRouter as Router, Route, Switch, Redirect,
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import Home from './home';
-import Footer from './footer';
+import Home from './home/home';
+import Footer from './footer/footer';
 import store from '../store';
-import SignUP from './signUp';
+import SignUP from './signup/signUp';
 
 class App extends Component {
   constructor(props) {

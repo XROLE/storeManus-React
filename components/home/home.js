@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { Component } from 'react';
-import '../css/home.css';
+import '../../css/home.css';
 
 class Home extends Component {
   render(){

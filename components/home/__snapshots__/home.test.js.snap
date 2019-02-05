@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Should render just the homepage and footer 1`] = `
+<div
+  className="homee"
+>
+  <div
+    className="logDiv"
+  >
+    <p>
+       
+      <i
+        className="fas free fa-stream"
+      />
+         
+      <span>
+        Store Manus
+      </span>
+    </p>
+  </div>
+  <div
+    className="descriptiveDiv"
+  >
+    <h1
+      className="description"
+    >
+      Reliable Store Manager
+    </h1>
+    <a
+      className="get-started-button"
+      href="./views/signin.html"
+    >
+       
+      <i
+        className="far fa-hand-pointer"
+      />
+         Get Started
+    </a>
+    <p
+      className="description2"
+    >
+      simple to use
+    </p>
+  </div>
+</div>
+`;
