@@ -1,30 +1,23 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { SIGN_UP } from '../store/actions/types';
+import React from 'react';
+import Navbar from './navbar';
 
-class SignUp extends Component{
-  render(){
-    return (
-    <div>
-      <h1> {this.props.title}</h1>
+const SignUp = () => (
+  <>
+    <Navbar />
+    <div className="signupDiv" style={{ marginTop: '180px' }}>
+      <form action="" className="signup-form">
+        <div>
+          <input type="email" name="email" id="signInEmail" placeholder="Email" />
+        </div>
+        <div>
+          <input type="password" name="password" id="signInPassword" placeholder="Password" />
+        </div>
+        <div className="signup-button-div">
+          <button className="link signin-button" type="submit">SIGN IN</button>
+        </div>
+      </form>
     </div>
-    );
-  }
-};
+  </>
+);
 
-SignUp.propTypes = {
-  title: PropTypes.string.isRequired,
-  alertSignUp: PropTypes.func.isRequired
-}
-
-const mapStateToProps = (state) => ({
-  title: state.signUp.title
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  alertSignUp: () => dispatch({ type: SIGN_UP })
-});
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+export default SignUp;
