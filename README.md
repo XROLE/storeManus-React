@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.org/XROLE/storeManus-React.svg?branch=develop)](https://travis-ci.org/XROLE/storeManus-React) [![Coverage Status](https://coveralls.io/repos/github/XROLE/storeManus-React/badge.svg?branch=develop)](https://coveralls.io/github/XROLE/storeManus-React?branch=develop)
