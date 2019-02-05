@@ -4,7 +4,6 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Home from './home';
-import Navbar from './navbar';
 import Footer from './footer';
 import store from '../store';
 import SignUP from './signUp';
@@ -19,7 +18,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <Switch>
-            <Route path="/" component={Home} />
+            <Route exact path="/" component={Home} />
             <Route path="/login" component={SignUP} />
             <Redirect to="/" />
           </Switch>
