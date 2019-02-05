@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "test": "jest --coverage",
+    "test": "jest  --coverage --coverageReporters=text-lcov | coveralls",
     "build": "webpack mode production"
   },
   "author": "Xrole Diamond",
