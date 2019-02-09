@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Home from './Home';
+import Navbar from './Navbar';
 
 describe('Header', () => {
-  it('Should render just the homepage and footer', () => {
+  it('Should render just the Navbar component', () => {
     const component = shallow(
-      <Home />,
+      <Navbar />,
     );
     expect(component.exists()).toBe(true);
     expect(component).toMatchSnapshot();

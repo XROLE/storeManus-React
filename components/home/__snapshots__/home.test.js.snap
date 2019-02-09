@@ -1,46 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header Should render just the homepage and footer 1`] = `
-<div
-  className="homee"
->
-  <div
-    className="logDiv"
+<Fragment>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
   >
-    <p>
-       
-      <i
-        className="fas free fa-stream"
-      />
-         
-      <span>
-        Store Manus
-      </span>
-    </p>
-  </div>
+    <style>
+      body { background-color: #000a3f; }
+    </style>
+  </HelmetWrapper>
   <div
-    className="descriptiveDiv"
+    className="homee"
   >
-    <h1
-      className="description"
+    <div
+      className="logDiv"
     >
-      Reliable Store Manager
-    </h1>
-    <a
-      className="get-started-button"
-      href="./views/signin.html"
+      <p>
+         
+        <i
+          className="fas free fa-stream"
+        />
+           
+        <span>
+          Store Manus
+        </span>
+      </p>
+    </div>
+    <div
+      className="descriptiveDiv"
     >
-       
-      <i
-        className="far fa-hand-pointer"
-      />
-         Get Started
-    </a>
-    <p
-      className="description2"
-    >
-      simple to use
-    </p>
+      <h1
+        className="description"
+      >
+        Reliable Store Manager
+      </h1>
+      <Link
+        className="get-started-button"
+        replace={false}
+        to="/login"
+      >
+         
+        <i
+          className="far fa-hand-pointer"
+        />
+           Get Started
+      </Link>
+      <p
+        className="description2"
+      >
+        simple to use
+      </p>
+    </div>
   </div>
-</div>
+</Fragment>
 `;

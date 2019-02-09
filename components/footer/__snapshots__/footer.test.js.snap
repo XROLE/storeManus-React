@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Should render just the footer component 1`] = `
+<footer
+  className="signin-footer"
+>
+  <div
+    className="footerDiv"
+  >
+    <p
+      className="copy-right"
+    >
+       © xrole 
+    </p>
+  </div>
+</footer>
+`;
