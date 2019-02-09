@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Home from './home/home';
-import Footer from './footer/Footer';
+import Footer from './footer/footer';
 import store from '../store';
 import SignIn from './auth/SignIn';
 
