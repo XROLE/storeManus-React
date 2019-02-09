@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "test": "jest --coverage && cat ./coverage/lcov.info | coveralls --exit",
-    "test:dev": "jest --coverage --exit",
+    "test:dev": "jest --coverage",
     "build": "webpack mode production"
   },
   "author": "Xrole Diamond",
