@@ -11,11 +11,11 @@ class Navbar extends Component {
       <nav className="navbar">
         <div className="navLogo">
           <p>
-            <a href="../index.html" style={{ color: 'white' }}>
+            <Link to="/" style={{ color: 'white' }}>
               <i className="fas free fa-stream" />
               &nbsp;
               <span>Store Manus</span>
-            </a>
+            </Link>
           </p>
           <p>
             <i className="fa fa-bars hanburgerButton" />
@@ -23,7 +23,7 @@ class Navbar extends Component {
           </p>
         </div>
         <ul className="nav-items">
-          <a href="./signin.html" style={{ color: 'white' }}><li>SignIn</li></a>
+          <Link to="/login" style={{ color: 'white' }}><li>SignIn</li></Link>
         </ul>
       </nav>
     );

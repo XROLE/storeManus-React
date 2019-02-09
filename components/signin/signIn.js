@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../navbar/navbar';
 
-const SignUp = () => (
+const SignIn = () => (
   <>
     <Navbar />
     <div className="signupDiv" style={{ marginTop: '180px' }}>
@@ -20,4 +20,4 @@ const SignUp = () => (
   </>
 );
 
-export default SignUp;
+export default SignIn;

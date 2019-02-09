@@ -5,6 +5,10 @@ body{
   display: flex;
   justify-content: space-around;
 }
+body{
+  padding: 0;
+  margin: 0;
+}
 div{
   padding: 0;
   margin: 0;
@@ -140,7 +144,7 @@ a{
   border: none;
   color: white;
   background-color: #000a3f;
-  padding: 10 25px !important;
+  padding: 10px 25px !important;
   font-size: 14px;
   text-transform: uppercase;
 }

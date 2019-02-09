@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import Home from './home/home';
 import Footer from './footer/footer';
 import store from '../store';
-import SignUP from './signup/signUp';
+import SignIn from './signin/signIn';
 
 class App extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/login" component={SignUP} />
+            <Route path="/login" component={SignIn} />
             <Redirect to="/" />
           </Switch>
         </Router>

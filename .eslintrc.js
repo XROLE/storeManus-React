@@ -1,7 +1,8 @@
 module.exports = {
     "extends": ["airbnb", "jest-enzyme"],
     "env": {
-      "jest": true
+      "jest": true,
+      "browser": true
     },
     "rules": {
         "react/jsx-uses-react": 2,

@@ -4,6 +4,14 @@ exports[`Header Should render just the homepage and footer 1`] = `
 <div
   className="homee"
 >
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <style>
+      body { background-color: #000a3f; color: white; }
+    </style>
+  </HelmetWrapper>
   <div
     className="logDiv"
   >
@@ -26,16 +34,17 @@ exports[`Header Should render just the homepage and footer 1`] = `
     >
       Reliable Store Manager
     </h1>
-    <a
+    <Link
       className="get-started-button"
-      href="./views/signin.html"
+      replace={false}
+      to="/login"
     >
        
       <i
         className="far fa-hand-pointer"
       />
          Get Started
-    </a>
+    </Link>
     <p
       className="description2"
     >
