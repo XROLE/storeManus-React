@@ -9,6 +9,9 @@ div{
   padding: 0;
   margin: 0;
 }
+.dasboard-content-main {
+  height: 92vh;
+}
 .shift{
   padding: 0 5px;
 }
@@ -101,6 +104,11 @@ a{
   font-size: 16px;
   text-decoration: none;
 }
+
+.spinner {
+  margin: 2% 0 0 50%;
+}
+
 .get-started-button:hover{
   cursor: pointer;
   transform: scale(1.1);
@@ -140,7 +148,7 @@ a{
   border: none;
   color: white;
   background-color: #000a3f;
-  padding: 10 25px !important;
+  padding: 10px 25px !important;
   font-size: 14px;
   text-transform: uppercase;
 }
