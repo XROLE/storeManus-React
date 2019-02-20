@@ -1,15 +1,15 @@
-import { SIGN_UP } from '../actions/types';
+import { SIGN_UP } from '../actions/actionTypes';
 
 const initialState = {
-  title: 'SIGN UP'
+  title: 'SIGN UP',
 };
 
-export default function(state = initialState, action){
-  switch(action.type){
+export default function (state = initialState, action) {
+  switch (action.type) {
     case SIGN_UP: {
       return {
-        ...state
-      }
+        ...state,
+      };
     }
     default:
       return state;

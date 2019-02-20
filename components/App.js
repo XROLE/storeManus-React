@@ -4,9 +4,10 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Home from './home/Home';
-import Footer from './footer/footer';
 import store from '../store';
 import SignIn from './auth/SignIn';
+import AdminDashboard from './admin/AdminDashboard';
+import AttendantDashboard from './attendants/AttendantDashboard';
 
 class App extends Component {
   constructor(props) {
@@ -20,10 +21,10 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/login" component={SignIn} />
-            <Redirect to="/" />
+            <Route path="/adminDashboard" component={AdminDashboard} exact />
+            <Route path="/attendantsDashboard" component={AttendantDashboard} exact />
           </Switch>
         </Router>
-        <Footer />
       </Provider>
     );
   }

@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Footer from './footer';
+import Home from './Home';
 
 describe('Footer', () => {
-  it('Should render just the footer component', () => {
+  it('Should render just the Home component', () => {
     const component = shallow(
-      <Footer />,
+      <Home />,
     );
     expect(component.exists()).toBe(true);
     expect(component).toMatchSnapshot();

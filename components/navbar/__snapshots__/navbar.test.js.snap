@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Should render just the Navbar component 1`] = `
+<nav
+  className="navbar"
+>
+  <div
+    className="navLogo"
+  >
+    <p>
+      <Link
+        replace={false}
+        style={
+          Object {
+            "color": "white",
+          }
+        }
+        to="/"
+      >
+        <i
+          className="fas free fa-stream"
+        />
+         
+        <span>
+          Store Manus
+        </span>
+      </Link>
+    </p>
+    <p>
+      <i
+        className="fa fa-bars hanburgerButton"
+      />
+      <i
+        className="fa fa-times close"
+      />
+    </p>
+  </div>
+  <ul
+    className="nav-items"
+  >
+    <Link
+      replace={false}
+      style={
+        Object {
+          "color": "white",
+        }
+      }
+      to="./login"
+    >
+      <li>
+        SignIn
+      </li>
+    </Link>
+  </ul>
+</nav>
+`;

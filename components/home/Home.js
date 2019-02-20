@@ -2,6 +2,7 @@
 import React, { Component, Fragment } from 'react';
 import {Helmet} from 'react-helmet'
 import {Link}from 'react-router-dom';
+import Footer from '../footer/footer';
 import '../../css/home.css';
 
 class Home extends Component {
@@ -21,6 +22,7 @@ class Home extends Component {
               <p className="description2">simple to use</p>
           </div>
         </div>
+      <Footer />
      </Fragment>
     )}
 }
