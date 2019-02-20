@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import Navbar from '../navbar/Navbar';
 
 export default class AdminDashboard extends Component {
-  constructor(props) {
+  constructor() {
     super();
   }
 
