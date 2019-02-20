@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Navbar from '../navbar/Navbar';
+import Navbar from '../navbar/tyu';
 
 export default class AdminDashboard extends Component {
   constructor() {
