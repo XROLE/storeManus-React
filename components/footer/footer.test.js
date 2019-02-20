@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Footer from './Footer';
+import Footer from './footer';
 
 describe('Footer', () => {
   it('Should render just the footer component', () => {
