@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import Navbar from '../navbar/tyu';
+import { Link } from 'react-router-dom';
+import Navbar from '../navbar/Navbar';
 
 export default class AdminDashboard extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ export default class AdminDashboard extends Component {
             </div>
             <div className="dasboard-content-main">
               <ul className="dasboard-content-items">
-                <p className="dasboard-header"><a href="adminDashboard.html">Dashboard</a></p>
+                <p className="dasboard-header"><Link to="/adminDashboard">Dashboard</Link></p>
                 <li className="link" id="all-products">
                   <a href="admin-all-products.html">
                     <i className="fas fa-cookie-bite" />
@@ -40,10 +41,10 @@ export default class AdminDashboard extends Component {
                   </a>
                 </li>
                 <li className="link">
-                  <a href="admin-add-products.html">
+                  <Link to="admin/add/product">
                     <i className="far fa-plus-square" />
 &nbsp; Add Product
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <ul className="dasboard-content-items">
@@ -55,10 +56,10 @@ export default class AdminDashboard extends Component {
                   </a>
                 </li>
                 <li className="link">
-                  <a href="admin-add-attendant.html">
+                  <Link to="admin/add/attendant">
                     <i className="far fa-plus-square" />
 &nbsp; Add Attendant
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

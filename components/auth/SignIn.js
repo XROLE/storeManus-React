@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import Spinner from 'react-spinkit';
 import Footer from '../footer/footer';
 import { loginUser } from '../../store/actions/loginUser';
-import AttendantDashboard from '../attendants/AttendantDashboard';
 import Navbar from '../navbar/Navbar';
 import store from '../../store/index';
 import 'react-toastify/dist/ReactToastify.css';
@@ -29,8 +28,8 @@ class SignIn extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const loginDetails = this.state;
 
+    const loginDetails = this.state;
     const { login } = this.props;
     this.setState({
       shouldShowError: true,
