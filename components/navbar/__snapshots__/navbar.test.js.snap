@@ -45,7 +45,7 @@ exports[`Footer Should render just the Navbar component 1`] = `
           "color": "white",
         }
       }
-      to="./login"
+      to="/login"
     >
       <li>
         SignIn

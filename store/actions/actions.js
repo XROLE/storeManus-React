@@ -1,43 +1,38 @@
 import axios from 'axios';
 import {
-  PROFILE_UPDATE_IN_PROGRESS,
-  PROFILE_UPDATE_ERROR,
-  PROFILE_UPDATE_IN_PROGRESS,
+  UPDATE_IN_PROGRESS,
+  UPDATE_SUCCESS,
+  UPDATE_ERROR,
 } from './actionTypes';
 
 const baseUrl = 'https://storemanus.herokuapp.com/api/v1';
+const token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImZpcnN0bmFtZSI6ImdnIiwibGFzdG5hbWUiOiJhIiwiZW1haWwiOiJnZ0BhLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJE93VE1xRTNJUUMxZGRIWlRreUwvSS5vNjEucWZ0bE9BcFY0WEJWUmNNWUtWNWJOWjVtLzFhIiwicGhvbmVubyI6IjExMTExMTExMTExIiwiZ2VuZGVyIjoidXBkYXRlIiwicHJvZmlsZXBpY3MiOiIuLi9pbWcvYXZhdGFyLmpwZyIsImlhdCI6MTU1MTc5NjEyOH0.9ABAKYB1L8ltE6fa5CsLTnYTtvzTWiUY-2NjniNuv6o';
 
-const headers = {
+const git = {
   headers: {
     Accept: 'application/json, text/plain, */*',
-    'x-access-token': `Bearer ${localStorage.getItem('storeManus_token')}`,
+    'x-access-token': token,
     'Content-type': 'application/json',
   },
 };
 
-export const profileUpdateInProgress = () => {
-  return { type: PROFILE_UPDATE_IN_PROGRESS };
-}
+export const profileUpdateInProgress = () => ({ type: UPDATE_IN_PROGRESS });
 
-export const isLargeFileSize = (file) => {
-  if(file > 70000){
-    return true;
-}
-
-export function updateProfile(profileDetails, id){
-  const url = `${baseUrl}/api/v1/attendants/${id}`;
+export function updateProfile(profileDetails, id) {
+  const url = `${baseUrl}/attendants/${id}`;
 
   return (dispatch) => {
     dispatch(profileUpdateInProgress());
     axios
-      .post(url, profileDetails, headers)
+      .put(url, profileDetails, git)
       .then((res) => {
-        const message = `Proceed to update your account password = ${res.data.password}`;
-        dispatch({ type: ADDED_ATTENDANT, payload: { message } });
+        const success = res.data.Success;
+        const message = res.data.Message;
+        dispatch({ type: UPDATE_SUCCESS, payload: { message, success } });
       }).catch((err) => {
         const error = err.response.data.Message;
-        console.log(err);
-        dispatch({ type: ADD_ATTENDANT_ERROR, error });
-    })
-  }
+        console.log('========> error', err);
+        dispatch({ type: UPDATE_ERROR, error });
+      });
+  };
 }
