@@ -45,6 +45,7 @@ class SignIn extends Component {
     const { email, password, shouldShowError } = this.state;
     const { pending, loginError, token } = this.props;
 
+    console.log('This is pending======> ', pending);
     if (loginError && shouldShowError) {
       this.notify(loginError);
       this.setState({

@@ -23,7 +23,7 @@ class Navbar extends Component {
           </p>
         </div>
         <ul className="nav-items">
-          <Link to="./login" style={{ color: 'white' }}><li>SignIn</li></Link>
+          <Link to="/login" style={{ color: 'white' }}><li>SignIn</li></Link>
         </ul>
       </nav>
     );
