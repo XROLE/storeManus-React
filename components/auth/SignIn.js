@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Spinner from 'react-spinkit';
 import Footer from '../footer/footer';
-import { loginUser } from '../../store/actions/loginUser';
+import { loginUser } from '../../store/reducers/loginReducer';
 import Navbar from '../navbar/Navbar';
 import store from '../../store/index';
 import 'react-toastify/dist/ReactToastify.css';
@@ -93,7 +93,9 @@ class SignIn extends Component {
                 SIGN IN
               </button>
             </div>
-            { pending ? <Spinner name="circle" className="spinner" id="reactLoader" /> : null}
+            { pending === true && (
+            <Spinner name="circle" className="spinner" id="reactLoader" />
+            )}
           </form>
         </div>
         <Footer />

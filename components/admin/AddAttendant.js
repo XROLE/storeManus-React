@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Spinner from 'react-spinkit';
 import { Link } from 'react-router-dom';
-import { addAttendant } from '../../store/actions/loginUser';
+import { addAttendant } from '../../store/reducers/loginReducer';
 import Navbar from '../navbar/Navbar';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -174,7 +174,10 @@ class AdminAddAttendant extends Component {
                 <div>
                   <button className="link" id="add-attendant-button" type="submit">CREATE ATTENDANT</button>
                 </div>
-                { pending ? <Spinner name="circle" className="spinner" id="reactLoader" /> : null}
+                {/* { pending ? <Spinner name="circle" className="spinner" id="reactLoader" /> : null} */}
+                { pending === true && (
+                <Spinner name="circle" className="spinner" id="reactLoader" />
+                )}
               </form>
             </div>
           </div>
