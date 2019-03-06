@@ -11,6 +11,7 @@ import AttendantDashboard from './attendants/AttendantDashboard';
 import AdminAddAttendant from './admin/AddAttendant';
 import ProfileUpdate from './attendants/ProfileUpdate';
 import AddProduct from './admin/AddProduct';
+import Products from './admin/Products';
 
 class App extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class App extends Component {
             <Route path="/attendantsDashboard" component={AttendantDashboard} exact />
             <Route path="/attendant/profile/update" component={ProfileUpdate} exact />
             <Route path="/admin/product/add" component={AddProduct} exact />
+            <Route path="/products" component={Products} exact />
           </Switch>
         </Router>
       </Provider>

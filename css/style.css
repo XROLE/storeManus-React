@@ -238,6 +238,13 @@ a{
   border: none;
   padding: 5px 10px;
 }
+.dashboardDisplayDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .test{
   display: flex;
   flex-direction: column;
