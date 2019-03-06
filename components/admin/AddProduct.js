@@ -1,22 +1,23 @@
 import React, { Fragment, Component } from 'react';
+import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import Spinner from 'react-spinkit';
-import { Link } from 'react-router-dom';
-import { addAttendant } from '../../store/reducers/loginReducer';
 import Navbar from '../navbar/Navbar';
-import 'react-toastify/dist/ReactToastify.css';
+import { addProduct } from '../../store/actions/actions';
 
-class AdminAddAttendant extends Component {
+class AddProduct extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: '',
-      email: '',
+      name: '',
+      price: '',
+      quantity: '',
+      type: '',
+      category: '',
       shouldShowError: false,
       showSuccessMessage: false,
+      resetState: false,
     };
   }
 
@@ -28,11 +29,14 @@ class AdminAddAttendant extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const attendantDetails = this.state;
-    const { registerAttendant } = this.props;
+    const product = this.state;
+    const { add } = this.props;
 
-    this.setState({ shouldShowError: true });
-    registerAttendant(addAttendant(attendantDetails));
+    this.setState({
+      shouldShowError: true,
+      showSuccessMessage: true,
+    });
+    add(addProduct(product));
   }
 
   notify(error) {
@@ -41,27 +45,32 @@ class AdminAddAttendant extends Component {
 
   render() {
     const {
-      email,
-      firstName,
-      lastName,
-      shouldShowError,
-      showSuccessMessage,
+      name, type, price, category, quantity, shouldShowError, showSuccessMessage,
     } = this.state;
-    const { registrationError, pending, message } = this.props;
+    const {
+      pending, addProductError, success, addProductMessage,
+    } = this.props;
 
-    if (registrationError && shouldShowError) {
-      this.notify(registrationError);
+    if (addProductError && shouldShowError) {
+      this.notify(addProductError);
       this.setState({
         shouldShowError: false,
       });
     }
-    if (showSuccessMessage && message) {
-      console.log(message);
+
+    if (success && showSuccessMessage) {
+      this.notify(addProductMessage);
       this.setState({
+        name: '',
+        price: '',
+        quantity: '',
+        type: '',
+        category: '',
+        shouldShowError: false,
         showSuccessMessage: false,
       });
+      // this.props.success = false;
     }
-
     return (
       <Fragment>
         <Navbar />
@@ -155,24 +164,31 @@ class AdminAddAttendant extends Component {
               </div>
             </div>
             <div className="dasboard-display-div">
-              <form action="" id="add-attendants" onSubmit={e => this.handleSubmit(e)}>
-                <div className="form-label fontBlack">
-                  <label htmlFor="add-attendants">
+              <form action="" id="add-product" onSubmit={e => this.handleSubmit(e)}>
+                <div className="form-label">
+                  <label htmlFor="add-product" className="fontBlack">
                     <i className="far fa-plus-square" />
-                  &nbsp;ADD ATTENDANT
+                    {' '}
+&nbsp;ADD PRODUCT
                   </label>
                 </div>
                 <div>
-                  <input type="text" name="firstName" id="firstName" placeholder="FIRST NAME" onChange={e => this.onChange(e)} value={firstName} />
+                  <input type="text" name="name" id="product-Name" placeholder="NAME" onChange={e => this.onChange(e)} value={name} />
                 </div>
                 <div>
-                  <input type="text" name="lastName" id="lastName" placeholder="LAST NAME" onChange={e => this.onChange(e)} value={lastName} />
+                  <input type="number" name="quantity" id="product-Quantity" placeholder="QUANTITY" onChange={e => this.onChange(e)} value={quantity} />
                 </div>
                 <div>
-                  <input type="email" name="email" id="email" placeholder="EMAIL" onChange={e => this.onChange(e)} value={email} />
+                  <input type="number" name="price" id="product-Price" placeholder="PRICE" onChange={e => this.onChange(e)} value={price} />
                 </div>
                 <div>
-                  <button className="link" id="add-attendant-button" type="submit">CREATE ATTENDANT</button>
+                  <input type="text" name="type" id="product-Type" placeholder="TYPE" onChange={e => this.onChange(e)} value={type} />
+                </div>
+                <div>
+                  <input type="text" name="category" id="product-Category" placeholder="CATEGORY" onChange={e => this.onChange(e)} value={category} />
+                </div>
+                <div>
+                  <button className="link" id="add-product-button" type="submit">Add Product</button>
                 </div>
                 { pending === true && (
                 <Spinner name="circle" className="spinner" id="reactLoader" />
@@ -187,21 +203,15 @@ class AdminAddAttendant extends Component {
   }
 }
 
-AdminAddAttendant.propType = {
-  registerAttendant: PropTypes.func.isRequired,
-  pending: PropTypes.bool.isRequired,
-  registrationMessage: PropTypes.string.isRequired,
-  registrationError: PropTypes.string.isRequired,
-};
+const mapDispatchToProps = dispatch => ({
+  add: product => dispatch(product),
+});
 
 const mapStateToProps = state => ({
-  registrationMessage: state.registerAttendant.message,
-  pending: state.registerAttendant.pending,
-  registrationError: state.registerAttendant.error,
+  addProductMessage: state.addProduct.message,
+  pending: state.addProduct.pending,
+  addProductError: state.addProduct.error,
+  success: state.addProduct.success,
 });
 
-const mapDispatchToProps = dispatch => ({
-  registerAttendant: attendantDetails => dispatch(attendantDetails),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(AdminAddAttendant);
+export default connect(mapStateToProps, mapDispatchToProps)(AddProduct);

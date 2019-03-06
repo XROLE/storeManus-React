@@ -41,7 +41,7 @@ export default class AdminDashboard extends Component {
                   </a>
                 </li>
                 <li className="link">
-                  <Link to="admin/add/product">
+                  <Link to="admin/product/add">
                     <i className="far fa-plus-square" />
 &nbsp; Add Product
                   </Link>
