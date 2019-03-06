@@ -13,6 +13,7 @@ import ProfileUpdate from './attendants/ProfileUpdate';
 import AddProduct from './admin/AddProduct';
 import Products from './admin/Products';
 import AvailableProducts from './admin/AvailableProducts';
+import FinishedProduct from './admin/FinishedProduct';
 
 class App extends Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class App extends Component {
             <Route path="/admin/product/add" component={AddProduct} exact />
             <Route path="/products" component={Products} exact />
             <Route path="/products/available" component={AvailableProducts} exact />
+            <Route path="/products/finished" component={FinishedProduct} exact />
           </Switch>
         </Router>
       </Provider>

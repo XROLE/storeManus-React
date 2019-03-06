@@ -12,6 +12,9 @@ import {
   AVAILABLE_PRODUCT_IN_PROGRESS,
   AVAILABLE_PRODUCT_SUCCESS,
   AVAILABLE_PRODUCT_ERROR,
+  FINISHED_PRODUCT_IN_PROGRESS,
+  FINISHED_PRODUCT_SUCCESS,
+  FINISHED_PRODUCT_ERROR,
 } from './actionTypes';
 
 const baseUrl = 'https://storemanus.herokuapp.com/api/v1';
@@ -31,6 +34,7 @@ export const profileUpdateInProgress = () => ({ type: UPDATE_IN_PROGRESS });
 export const addProductInProgress = () => ({ type: ADD_PRODUCT_IN_PROGRESS });
 export const gettingProductInProgress = () => ({ type: GET_PRODUCT_IN_PROGRESS });
 export const gettingAvailableProductInProgress = () => ({ type: AVAILABLE_PRODUCT_IN_PROGRESS });
+export const gettingFinishedProductInProgress = () => ({ type: FINISHED_PRODUCT_IN_PROGRESS });
 
 export function updateProfile(profileDetails, id) {
   const url = `${baseUrl}/attendants/${id}`;
@@ -89,7 +93,7 @@ export const getProducts = () => (dispatch) => {
 };
 
 export const getAvailableProducts = () => (dispatch) => {
-  const url = `${baseUrl}/products//available`;
+  const url = `${baseUrl}/products/available`;
 
   dispatch(gettingAvailableProductInProgress());
   axios
@@ -103,5 +107,22 @@ export const getAvailableProducts = () => (dispatch) => {
 
       console.log('========> error', error);
       dispatch({ type: AVAILABLE_PRODUCT_ERROR, error });
+    });
+};
+export const getFinishedProducts = () => (dispatch) => {
+  const url = `${baseUrl}/products/finished`;
+
+  dispatch(gettingFinishedProductInProgress());
+  axios
+    .get(url, git)
+    .then((res) => {
+      const { finishedProducts } = res.data;
+
+      dispatch({ type: FINISHED_PRODUCT_SUCCESS, payload: { finishedProducts } });
+    }).catch((err) => {
+      const error = err.response.data.Message;
+
+      console.log('========> error', error);
+      dispatch({ type: FINISHED_PRODUCT_ERROR, error });
     });
 };
