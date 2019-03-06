@@ -55,7 +55,7 @@ export default class Sidebar extends Component {
               <li className="link">
                 <Link to="admin/add/attendant">
                   <i className="far fa-plus-square" />
-&nbsp; Add Attendant
+&nbsp; Add Attendants
                 </Link>
               </li>
             </ul>
