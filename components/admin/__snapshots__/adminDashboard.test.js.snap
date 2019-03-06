@@ -86,7 +86,7 @@ exports[`Admin Dashboard Should render just the Admin Dashboard component 1`] = 
           >
             <Link
               replace={false}
-              to="admin/add/product"
+              to="admin/product/add"
             >
               <i
                 className="far fa-plus-square"
