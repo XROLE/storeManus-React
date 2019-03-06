@@ -32,10 +32,10 @@ export default class Sidebar extends Component {
                 </Link>
               </li>
               <li className="link">
-                <a href="admin-finished-products.html">
+                <Link to="/products/finished">
                   <i className="fas fa-thermometer-empty" />
 &nbsp; Finished Products
-                </a>
+                </Link>
               </li>
               <li className="link">
                 <Link to="admin/product/add">
