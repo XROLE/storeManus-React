@@ -4,6 +4,7 @@ import addAttendantReducer from './addAttendantReducer';
 import updateProfileReducer from './updateProfileReducer';
 import addProductReducer from './addProductReducer';
 import getProduct from './getProducts';
+import avaibleProducts from './availableProductsReducer';
 
 export default combineReducers({
   login: loginReducer,
@@ -11,4 +12,5 @@ export default combineReducers({
   profile: updateProfileReducer,
   addProduct: addProductReducer,
   getProduct,
+  avaibleProducts,
 });

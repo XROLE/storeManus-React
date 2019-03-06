@@ -26,10 +26,10 @@ export default class Sidebar extends Component {
                 </Link>
               </li>
               <li className="link">
-                <a href="admin-available-products.html">
+                <Link to="products/available">
                   <i className="fab fa-accessible-icon" />
 &nbsp; Available Products
-                </a>
+                </Link>
               </li>
               <li className="link">
                 <a href="admin-finished-products.html">
