@@ -3,6 +3,9 @@ import {
   UPDATE_IN_PROGRESS,
   UPDATE_SUCCESS,
   UPDATE_ERROR,
+  ADD_PRODUCT_IN_PROGRESS,
+  ADD_PRODUCT_SUCCESS,
+  ADD_PRODUCT_ERROR,
 } from './actionTypes';
 
 const baseUrl = 'https://storemanus.herokuapp.com/api/v1';
@@ -17,6 +20,7 @@ const git = {
 };
 
 export const profileUpdateInProgress = () => ({ type: UPDATE_IN_PROGRESS });
+export const addProductInProgress = () => ({ type: ADD_PRODUCT_IN_PROGRESS });
 
 export function updateProfile(profileDetails, id) {
   const url = `${baseUrl}/attendants/${id}`;
@@ -36,3 +40,23 @@ export function updateProfile(profileDetails, id) {
       });
   };
 }
+
+export const addProduct = product => (dispatch) => {
+  const url = `${baseUrl}/products`;
+  dispatch(addProductInProgress());
+  axios
+    .post(url, product, git)
+    .then((res) => {
+      const success = res.data.Success;
+      const message = res.data.Message;
+      console.log(' This is success message', message);
+
+      dispatch({ type: ADD_PRODUCT_SUCCESS, payload: { message, success } });
+    }).catch((err) => {
+      const error = err.response.data.Message;
+      const success = err.response.data.Success;
+
+      console.log('========> error', err);
+      dispatch({ type: ADD_PRODUCT_ERROR, error, success });
+    });
+};
