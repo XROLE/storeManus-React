@@ -1,5 +1,4 @@
 import React, { Fragment, Component } from 'react';
-import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import { connect } from 'react-redux';
 import Spinner from 'react-spinkit';
