@@ -6,10 +6,15 @@ import {
   ADD_PRODUCT_IN_PROGRESS,
   ADD_PRODUCT_SUCCESS,
   ADD_PRODUCT_ERROR,
+  GET_PRODUCT_IN_PROGRESS,
+  GET_PRODUCT_SUCCESS,
+  GET_PRODUCT_ERROR,
 } from './actionTypes';
 
 const baseUrl = 'https://storemanus.herokuapp.com/api/v1';
-const token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImZpcnN0bmFtZSI6ImdnIiwibGFzdG5hbWUiOiJhIiwiZW1haWwiOiJnZ0BhLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJE93VE1xRTNJUUMxZGRIWlRreUwvSS5vNjEucWZ0bE9BcFY0WEJWUmNNWUtWNWJOWjVtLzFhIiwicGhvbmVubyI6IjExMTExMTExMTExIiwiZ2VuZGVyIjoidXBkYXRlIiwicHJvZmlsZXBpY3MiOiIuLi9pbWcvYXZhdGFyLmpwZyIsImlhdCI6MTU1MTc5NjEyOH0.9ABAKYB1L8ltE6fa5CsLTnYTtvzTWiUY-2NjniNuv6o';
+const token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inhyb2xlZGlhbW9uZEBnbWFpbC5jb20iLCJwYXNzd29yZCI6Inhyb2xldmFsc2lkbzI2MzQiLCJpYXQiOjE1NTE4ODI2MDAsImV4cCI6MTU1MTg4NjIwMH0.hSzMVYHAeogdqPBXnMaVzkBIfUPYMv5QbLVftEYNHXQ';
+
+// const token = `Bearer ${localStorage.getItem('accessToken')}`;
 
 const git = {
   headers: {
@@ -21,6 +26,7 @@ const git = {
 
 export const profileUpdateInProgress = () => ({ type: UPDATE_IN_PROGRESS });
 export const addProductInProgress = () => ({ type: ADD_PRODUCT_IN_PROGRESS });
+export const gettingProductInProgress = () => ({ type: GET_PRODUCT_IN_PROGRESS });
 
 export function updateProfile(profileDetails, id) {
   const url = `${baseUrl}/attendants/${id}`;
@@ -49,7 +55,6 @@ export const addProduct = product => (dispatch) => {
     .then((res) => {
       const success = res.data.Success;
       const message = res.data.Message;
-      console.log(' This is success message', message);
 
       dispatch({ type: ADD_PRODUCT_SUCCESS, payload: { message, success } });
     }).catch((err) => {
@@ -58,5 +63,23 @@ export const addProduct = product => (dispatch) => {
 
       console.log('========> error', err);
       dispatch({ type: ADD_PRODUCT_ERROR, error, success });
+    });
+};
+
+export const getProducts = () => (dispatch) => {
+  const url = `${baseUrl}/products`;
+
+  dispatch(gettingProductInProgress());
+  axios
+    .get(url, git)
+    .then((res) => {
+      const products = res.data.Products;
+
+      dispatch({ type: GET_PRODUCT_SUCCESS, payload: { products } });
+    }).catch((err) => {
+      const error = err.response.data.Message;
+
+      console.log('========> error', error);
+      dispatch({ type: GET_PRODUCT_ERROR, error });
     });
 };
