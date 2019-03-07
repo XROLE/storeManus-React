@@ -14,6 +14,7 @@ import AddProduct from './admin/AddProduct';
 import Products from './admin/Products';
 import AvailableProducts from './admin/AvailableProducts';
 import FinishedProduct from './admin/FinishedProduct';
+import Attendants from './admin/Attendants';
 
 class App extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class App extends Component {
             <Route path="/products" component={Products} exact />
             <Route path="/products/available" component={AvailableProducts} exact />
             <Route path="/products/finished" component={FinishedProduct} exact />
+            <Route path="/attendants" component={Attendants} exact />
           </Switch>
         </Router>
       </Provider>

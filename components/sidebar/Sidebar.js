@@ -47,10 +47,10 @@ export default class Sidebar extends Component {
             <ul className="dasboard-content-items">
               <p className="dasboard-header">Attendants</p>
               <li className="link">
-                <a href="admin-all-attendants.html">
+                <Link to="/attendants">
                   <i className="fas fa-users" />
 &nbsp; All Attendants
-                </a>
+                </Link>
               </li>
               <li className="link">
                 <Link to="admin/add/attendant">
