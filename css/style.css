@@ -4,6 +4,9 @@ body{
 .fontBlack {
   color: black
 }
+.logOut:hover {
+  cursor: pointer;
+}
 .att-pro-div{
   display: flex;
   justify-content: space-around;
