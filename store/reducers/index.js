@@ -7,6 +7,8 @@ import getProduct from './getProducts';
 import avaibleProducts from './availableProductsReducer';
 import finishedProducts from './finisheProductReducer';
 import getAttendants from './getAttendants';
+import updatedProduct from './updateProductReducer';
+import sales from './createSalesReducer';
 
 export default combineReducers({
   login: loginReducer,
@@ -17,4 +19,6 @@ export default combineReducers({
   avaibleProducts,
   finishedProducts,
   getAttendants,
+  updatedProduct,
+  sales,
 });
