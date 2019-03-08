@@ -58,7 +58,6 @@ class AdminAddAttendant extends Component {
       });
     }
     if (showSuccessMessage && message) {
-      console.log(message);
       this.setState({
         showSuccessMessage: false,
       });

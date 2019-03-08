@@ -1,9 +1,23 @@
 import React, { Component, Fragment } from 'react';
+import jwtDecode from 'jwt-decode';
 import { Link } from 'react-router-dom';
 
 class AttendantNavigator extends Component {
   constructor(props) {
     super();
+
+    this.firstName;
+    this.lastName;
+    this.profilepics;
+  }
+
+  componentDidMount() {
+    const token = localStorage.getItem('accessToken');
+    const decoded = jwtDecode(token);
+    const { lastname, firstname, profilepics } = decoded;
+    this.firstName = firstname;
+    this.lastName = lastname;
+    this.profilePics = profilepics;
   }
 
   render() {
@@ -12,10 +26,15 @@ class AttendantNavigator extends Component {
         <div className="att-dashboard-div fontBlack">
           <div className="att-dashboard-img-div">
             <a href="">
-              <img src="https://res.cloudinary.com/xrole/image/upload/v1542793508/mks0mafcukuejmd9ktwf.jpg" alt="" className="Avatar" id="profileAvatar" />
+              <img src={this.profilePics} alt="" className="Avatar" id="profileAvatar" />
             </a>
               &nbsp;
-            <span id="fullName" style={{ textTransform: 'capitalize', fontWeight: 'bold' }}>Xrole</span>
+            <span id="fullName" style={{ textTransform: 'capitalize', fontWeight: 'bold' }}>
+              {this.firstName }
+{' '}
+&nbsp;
+{this.lastName}
+            </span>
           </div>
           <div className="att-dashboard-middle-item-div">
             <p className="att-dashboard-item">

@@ -15,7 +15,6 @@ class AvailableProducts extends Component {
 
   componentDidMount() {
     const { get, availableProducts } = this.props;
-    console.log('Login the props ======> ', this.props);
     if (!availableProducts.length) {
       get(getAvailableProducts());
     }
