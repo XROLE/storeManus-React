@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component Should render just the Navbar component 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        path="/login"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/adminDashboard"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/add/attendant"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/attendantsDashboard"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/attendant/profile/update"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/product/add"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/products"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/products/available"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/products/finished"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/attendants"
+      />
+    </Switch>
+  </BrowserRouter>
+</Provider>
+`;

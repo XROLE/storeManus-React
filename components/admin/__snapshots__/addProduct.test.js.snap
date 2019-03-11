@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Admin Add Products Should render just the Admin Add Attendant component 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;

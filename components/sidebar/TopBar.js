@@ -8,7 +8,7 @@ export default function TopBar() {
           <img src="../../src/img/avatar.jpg" alt="Avatar" className="Avatar" />
           <p className="avatar-label">welcome: Xrole</p>
         </div>
-        <div className="filter-div">
+        <div className="filter-div hide">
           <a href="admin-sales-viewer.html">Filter Sales By: </a>
 &nbsp;
           <select name="" id="">

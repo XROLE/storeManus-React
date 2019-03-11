@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import jwtDecode from 'jwt-decode';
 import { Link } from 'react-router-dom';
+import AuthHelper from '../../utills/AuthHelper';
 
 class AttendantNavigator extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class AttendantNavigator extends Component {
 
   componentDidMount() {
     const token = localStorage.getItem('accessToken');
-    const decoded = jwtDecode(token);
+    const decoded = AuthHelper.decodeToken(token);
     const { lastname, firstname, profilepics } = decoded;
     this.firstName = firstname;
     this.lastName = lastname;
@@ -31,9 +31,9 @@ class AttendantNavigator extends Component {
               &nbsp;
             <span id="fullName" style={{ textTransform: 'capitalize', fontWeight: 'bold' }}>
               {this.firstName }
-{' '}
+              {' '}
 &nbsp;
-{this.lastName}
+              {this.lastName}
             </span>
           </div>
           <div className="att-dashboard-middle-item-div">

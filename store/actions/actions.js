@@ -48,7 +48,6 @@ export const updateProductInProgress = () => ({ type: UPDATE_PRODUCT_IN_PROGRESS
 
 export function updateProfile(profileDetails, id) {
   const url = `${baseUrl}/attendants/${id}`;
-
   return (dispatch) => {
     dispatch(profileUpdateInProgress());
     axios
@@ -59,7 +58,6 @@ export function updateProfile(profileDetails, id) {
         dispatch({ type: UPDATE_SUCCESS, payload: { message, success } });
       }).catch((err) => {
         const error = err.response.data.Message;
-        console.log('========> error', err);
         dispatch({ type: UPDATE_ERROR, error });
       });
   };

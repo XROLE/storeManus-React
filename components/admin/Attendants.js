@@ -8,7 +8,7 @@ import TopBar from '../sidebar/TopBar';
 import { getAttendants } from '../../store/actions/actions';
 
 
-class Products extends Component {
+export class Products extends Component {
   constructor(props) {
     super();
   }

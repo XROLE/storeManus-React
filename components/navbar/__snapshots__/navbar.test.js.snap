@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Footer Should render just the Navbar component 1`] = `
+exports[`Navbar Component Should render just the Navbar component 1`] = `
 <nav
   className="navbar"
 >
@@ -38,19 +38,17 @@ exports[`Footer Should render just the Navbar component 1`] = `
   <ul
     className="nav-items"
   >
-    <Link
-      replace={false}
+    <li
+      className="logOut"
+      onClick={[Function]}
       style={
         Object {
           "color": "white",
         }
       }
-      to="/login"
     >
-      <li>
-        SignIn
-      </li>
-    </Link>
+      Logout
+    </li>
   </ul>
 </nav>
 `;

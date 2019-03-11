@@ -8,8 +8,8 @@ const initialState = {
   message: '',
   pending: false,
   error: '',
-  updatedAvailableProduct: '',
   success: false,
+  updatedAvailableProduct: '',
 };
 
 export default function (state = initialState, action) {

@@ -49,14 +49,16 @@ class ProfileUpdate extends Component {
     });
   }
 
-  showFileUrl() {
-    const fileSize = document.querySelector('input[type=file]').files[0].size;
+  showFileUrl(e) {
+    const file = e.target.files[0];
+    const fileSize = file.size;
     const reader = new FileReader();
 
     if (fileSize > 70000) {
       return alert('file size is too large. files sized must not exceed 7KB ', fileSize);
     }
-    reader.readAsDataURL(document.getElementById('profilepics').files[0]);
+    /* instanbul ignore next */
+    reader.readAsDataURL(file);
     reader.onload = () => {
       this.setState({ profilepics: reader.result });
     };
@@ -83,7 +85,7 @@ class ProfileUpdate extends Component {
     if (success === true && shouldRedirect === true) {
       localStorage.removeItem('accessToken');
       this.setState({ shouldRedirect: false });
-      return <Redirect to="/login" />;
+      return window.location.replace('/login');
     }
 
     if (updateError && shouldShowError) {
@@ -134,8 +136,8 @@ class ProfileUpdate extends Component {
                 <input
                   type="file"
                   id="profilepics"
-                  onChange={() => {
-                    this.showFileUrl();
+                  onChange={(e) => {
+                    this.showFileUrl(e);
                   }}
                 />
 

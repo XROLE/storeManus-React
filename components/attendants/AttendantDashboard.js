@@ -2,10 +2,10 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import Spinner from 'react-spinkit';
-import jwtDecode from 'jwt-decode';
 import AttendantNavigator from './AttendantNavigator';
 import Navbar from '../navbar/Navbar';
 import { getAvailableProducts, updateProduct, createSales } from '../../store/actions/actions';
+import AuthHelper from '../../utills/AuthHelper';
 
 let productArray;
 class AttendantDashboard extends Component {
@@ -27,7 +27,7 @@ class AttendantDashboard extends Component {
 
   componentDidMount() {
     const { get, availableProducts } = this.props;
-    if (!availableProducts.length) {
+    if (!availableProducts) {
       get(getAvailableProducts());
     }
   }
@@ -38,9 +38,11 @@ class AttendantDashboard extends Component {
     });
   }
 
+  /* istanbul ignore next */
   onChangeProduct(e) {
+    console.log('======> ', typeof e.target, e.target[0], e.target.getAttribute);
     const token = localStorage.getItem('accessToken');
-    const attendant = jwtDecode(token).firstname;
+    const attendant = AuthHelper.decodeToken(token).firstname;
 
     const productId = e.target[e.target.selectedIndex].getAttribute('id');
     const type = e.target[e.target.selectedIndex].getAttribute('type');
@@ -161,7 +163,7 @@ class AttendantDashboard extends Component {
       product,
       quantity,
     } = this.state;
-    if (availableProducts.length) {
+    if (availableProducts) {
       const cate = availableProducts.map(item => item.category);
       const uniqueCategory = new Set(cate.sort());
       allCategoryArray = [...uniqueCategory];

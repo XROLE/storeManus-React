@@ -15,7 +15,7 @@ class FinishedProducts extends Component {
 
   componentDidMount() {
     const { get, finishedProducts } = this.props;
-    if (!finishedProducts.length) {
+    if (!finishedProducts) {
       get(getFinishedProducts());
     }
   }
@@ -50,7 +50,7 @@ class FinishedProducts extends Component {
                     <th>Date Added</th>
                   </tr>
                   {finishedProducts && (
-                    finishedProducts.map((product, i) => (
+                    finishedProducts.map(product => (
                       <tr>
                         <td align="left">{product.id}</td>
                         <td align="left">{product.name}</td>

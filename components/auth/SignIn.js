@@ -10,7 +10,7 @@ import Navbar from '../navbar/Navbar';
 import store from '../../store/index';
 import 'react-toastify/dist/ReactToastify.css';
 
-class SignIn extends Component {
+export class SignIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,6 +18,8 @@ class SignIn extends Component {
       password: '',
       shouldShowError: true,
     };
+
+    this.handleSubmit.bind(this);
   }
 
   onChange(e) {
@@ -28,7 +30,6 @@ class SignIn extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
     const loginDetails = this.state;
     const { login } = this.props;
     this.setState({
@@ -53,17 +54,16 @@ class SignIn extends Component {
     }
 
     if (token && email === 'xrolediamond@gmail.com') {
-      localStorage.removeItem('storeManus_token');
-      localStorage.setItem('storeManus_token', token);
+      localStorage.setItem('accessToken', token);
       return <Redirect to="/adminDashboard" />;
-    } if (token) {
+    } if (!(token === '')) {
       return <Redirect to="/attendantsDashboard" />;
     }
     return (
       <Provider store={store}>
         <Navbar />
         <div className="signupDiv" style={{ marginTop: '180px' }}>
-          <form action="" className="signup-form">
+          <form action="" className="signup-form" onSubmit={e => this.handleSubmit(e)}>
             <div>
               <input
                 type="email"

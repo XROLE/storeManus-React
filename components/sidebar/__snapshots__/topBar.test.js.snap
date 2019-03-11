@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopBar Should render just the TopBar component 1`] = `
+<TopBar>
+  <div
+    className="avatar-div-container"
+  >
+    <div
+      className="avater-div"
+    >
+      <img
+        alt="Avatar"
+        className="Avatar"
+        src="../../src/img/avatar.jpg"
+      />
+      <p
+        className="avatar-label"
+      >
+        welcome: Xrole
+      </p>
+    </div>
+    <div
+      className="filter-div hide"
+    >
+      <a
+        href="admin-sales-viewer.html"
+      >
+        Filter Sales By: 
+      </a>
+       
+      <select
+        id=""
+        name=""
+      >
+        <option
+          value=""
+        >
+          -Select All-
+        </option>
+        <option
+          value=""
+        >
+          Attendats
+        </option>
+        <option
+          value=""
+        >
+          Categories
+        </option>
+        <option
+          value=""
+        >
+          Date
+        </option>
+      </select>
+       
+      <select
+        id=""
+        name=""
+      >
+        <option
+          value=""
+        >
+          ---- Select All ----
+        </option>
+        <option
+          value="Cythia Paul"
+        >
+          Cythia Paul
+        </option>
+        <option
+          value="Blessing Uche"
+        >
+          Blessing Uche
+        </option>
+        <option
+          value="Silas Nwokeocha"
+        >
+          Silas Nwokeocha
+        </option>
+        <option
+          value="Idowu Samson"
+        >
+          Idowu Samson
+        </option>
+        <option
+          value="Mathew Jade"
+        >
+          Mathew Jade
+        </option>
+        <option
+          value="Will Smith"
+        >
+          Will Smith
+        </option>
+        <option
+          value="Cindy Eze"
+        >
+          Cindy Eze
+        </option>
+        <option
+          value="Simon Peter"
+        >
+          Simon Peter
+        </option>
+      </select>
+       
+      <button
+        className="search-sales-by-attendant-buttton link"
+        type="submit"
+      >
+        <i
+          className="fas fa-search"
+        />
+        <span
+          className="search-text"
+        >
+             Search
+        </span>
+      </button>
+    </div>
+  </div>
+</TopBar>
+`;

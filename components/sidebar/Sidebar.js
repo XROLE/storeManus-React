@@ -26,7 +26,7 @@ export default class Sidebar extends Component {
                 </Link>
               </li>
               <li className="link">
-                <Link to="products/available">
+                <Link to="/products/available">
                   <i className="fab fa-accessible-icon" />
 &nbsp; Available Products
                 </Link>
@@ -38,7 +38,7 @@ export default class Sidebar extends Component {
                 </Link>
               </li>
               <li className="link">
-                <Link to="admin/product/add">
+                <Link to="/admin/product/add">
                   <i className="far fa-plus-square" />
 &nbsp; Add Product
                 </Link>
@@ -53,7 +53,7 @@ export default class Sidebar extends Component {
                 </Link>
               </li>
               <li className="link">
-                <Link to="admin/add/attendant">
+                <Link to="/admin/add/attendant">
                   <i className="far fa-plus-square" />
 &nbsp; Add Attendant
                 </Link>

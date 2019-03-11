@@ -1,15 +1,13 @@
 /* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
-import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 
-class Navbar extends Component {
+export class Navbar extends Component {
   constructor(props) {
     super();
   }
 
   logOut() {
-    console.log('Login out');
     localStorage.removeItem('accessToken');
     window.location.replace('/');
   }

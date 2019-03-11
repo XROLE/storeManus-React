@@ -1,7 +1,88 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Footer Should render just the SignIn component 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+exports[`Login Component Should render just the SignIn component 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Navbar />
+  <div
+    className="signupDiv"
+    style={
+      Object {
+        "marginTop": "180px",
+      }
+    }
+  >
+    <form
+      action=""
+      className="signup-form"
+      onSubmit={[Function]}
+    >
+      <div>
+        <input
+          id="signInEmail"
+          name="email"
+          onChange={[Function]}
+          placeholder="Email"
+          type="email"
+          value=""
+        />
+      </div>
+      <div>
+        <input
+          id="signInPassword"
+          name="password"
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+          value=""
+        />
+      </div>
+      <div
+        className="signup-button-div"
+      >
+        <button
+          className="link signin-button"
+          onClick={[Function]}
+          type="submit"
+        >
+          SIGN IN
+        </button>
+      </div>
+    </form>
+  </div>
+  <Footer />
+  <ToastContainer
+    autoClose={5000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    progressStyle={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
+</Provider>
 `;

@@ -10,7 +10,7 @@ import Sidebar from '../sidebar/Sidebar';
 import TopBar from '../sidebar/TopBar';
 import 'react-toastify/dist/ReactToastify.css';
 
-class AdminAddAttendant extends Component {
+export class AdminAddAttendant extends Component {
   constructor(props) {
     super(props);
     this.state = {

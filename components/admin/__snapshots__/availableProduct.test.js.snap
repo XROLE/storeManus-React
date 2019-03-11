@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Available Products Should render just Available produc component 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;

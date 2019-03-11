@@ -44,6 +44,7 @@ export default function (state = initialState, action) {
         token: action.payload.Token,
         user: action.payload.User,
         pending: false,
+        success: true,
       };
     }
     case LOGIN_PENDING: {

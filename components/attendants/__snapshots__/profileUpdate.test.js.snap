@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile component Should render just the Attendants component 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
