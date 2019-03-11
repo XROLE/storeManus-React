@@ -174,11 +174,9 @@ it('should update state when action type is  ADDED_ATTENDANT', () => {
 it('should update state when action type is  ADD_ATTENDANT_ERROR', () => {
   const state = addAttendantReducer(undefined, {
     type: 'ADD_ATTENDANT_ERROR',
-    error: '',
   });
   expect(state).toEqual({
     ...state,
-    error: '',
     pending: false,
   });
 });

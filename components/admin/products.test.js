@@ -7,6 +7,8 @@ import axios from 'axios';
 import { BrowserRouter } from 'react-router-dom';
 import Products from './Products';
 import getProducts from '../../store/reducers/getProducts';
+import updateProductReducer from '../../store/reducers/updateProductReducer';
+import createSalesReducer from '../../store/reducers/createSalesReducer';
 
 jest.mock('axios');
 
@@ -198,5 +200,111 @@ it('should update state when action type is  GET_PRODUCT_ERROR', () => {
     ...state,
     error: 'failed',
     pending: false,
+  });
+});
+
+describe('Update Products reducesr', () => {
+  it('should setup default state values', () => {
+    const state = updateProductReducer(undefined, {
+      type: '@@INIT',
+    });
+    expect(state).toEqual({
+      message: '',
+      pending: false,
+      error: '',
+      success: false,
+      updatedAvailableProduct: '',
+    });
+  });
+
+  it('should update state when action type is  UPDATE_PRODUCT_IN_PROGRESS', () => {
+    const state = updateProductReducer(undefined, {
+      type: 'UPDATE_PRODUCT_IN_PROGRESS',
+      error: null,
+      pending: true,
+    });
+    expect(state).toEqual({
+      ...state,
+      error: null,
+      pending: true,
+    });
+  });
+
+  it('should update state when action type is  UPDATE_PRODUCT_SUCCESS', () => {
+    const state = updateProductReducer(undefined, {
+      type: 'UPDATE_PRODUCT_SUCCESS',
+      payload: {
+        success: true,
+      },
+    });
+    expect(state).toEqual({
+      ...state,
+      success: true,
+    });
+  });
+
+  it('should update state when action type is  UPDATE_PRODUCT_ERROR', () => {
+    const state = updateProductReducer(undefined, {
+      type: 'UPDATE_PRODUCT_ERROR',
+      error: '',
+      pending: false,
+    });
+    expect(state).toEqual({
+      ...state,
+      error: '',
+      pending: false,
+    });
+  });
+});
+
+describe('Update Create Sales reducesr', () => {
+  it('should setup default state values', () => {
+    const state = createSalesReducer(undefined, {
+      type: '@@INIT',
+    });
+    expect(state).toEqual({
+      pending: false,
+      error: '',
+      success: false,
+      message: '',
+    });
+  });
+
+  it('should update state when action type is  CREATE_SALES_IN_PROGRESS', () => {
+    const state = createSalesReducer(undefined, {
+      type: 'CREATE_SALES_IN_PROGRESS',
+      pending: true,
+    });
+    expect(state).toEqual({
+      ...state,
+      pending: true,
+    });
+  });
+
+  it('should update state when action type is  CREATE_SALES_SUCCESS', () => {
+    const state = createSalesReducer(undefined, {
+      type: 'CREATE_SALES_SUCCESS',
+      payload: {
+        pending: false,
+        success: true,
+      },
+    });
+    expect(state).toEqual({
+      ...state,
+      success: true,
+    });
+  });
+
+  it('should update state when action type is  CREATE_SALES_ERROR', () => {
+    const state = createSalesReducer(undefined, {
+      type: 'CREATE_SALES_ERROR',
+      error: null,
+      pending: false,
+    });
+    expect(state).toEqual({
+      ...state,
+      error: null,
+      pending: false,
+    });
   });
 });
