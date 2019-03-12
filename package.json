@@ -8,6 +8,8 @@
     "test": "jest --coverage && cat ./coverage/lcov.info | coveralls --exit",
     "test:dev": "jest --coverage",
     "build": "webpack mode production",
+    "heroku-postbuild": "npm run build:prod",
+    "build:prod": "webpack -p --env=production",
     "update:snapshot": "jest --updateSnapshot"
   },
   "author": "Xrole Diamond",
@@ -21,6 +23,7 @@
     "coveralls": "^3.0.2",
     "dotenv": "^6.2.0",
     "eslint-config-airbnb-base": "^13.1.0",
+    "express": "^4.16.4",
     "jwt-decode": "^2.2.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
