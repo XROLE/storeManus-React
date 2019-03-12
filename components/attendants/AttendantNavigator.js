@@ -43,7 +43,7 @@ class AttendantNavigator extends Component {
                   Update Profile
               </Link>
             </p>
-            <p className="att-dashboard-item">
+            <p className="att-dashboard-item hide">
               <a href="att-sales-record.html">
                 <i className="fas fa-arrows-alt" />
                   &nbsp; Sales Record
