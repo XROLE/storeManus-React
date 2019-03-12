@@ -14,5 +14,5 @@ Store Manus is a web application that helps store owners manage sales and produc
   - Store Owner can add name of his/her store
   - Store attendant can not add products that are out of stock
   - Products are grouped into types and categories
-
+[StoreManus](https://storemanus-frontend.herokuapp.com/)
 Note: The store owner is also referred to as the admin of the application.
