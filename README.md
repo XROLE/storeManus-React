@@ -1,6 +1,7 @@
 # STORE MANUS
 
 [![Build Status](https://travis-ci.org/XROLE/storeManus-React.svg?branch=develop)](https://travis-ci.org/XROLE/storeManus-React) [![Coverage Status](https://coveralls.io/repos/github/XROLE/storeManus-React/badge.svg)](https://coveralls.io/github/XROLE/storeManus-React)
+
 Store Manus is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store. With Store Manus,
   - Store attendant can search and add products to buyer’s cart.
   - Store attendant can see his/her sale records but can’t modify them.
