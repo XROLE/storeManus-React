@@ -4,7 +4,8 @@
   "description": "Store Manus is a web application that helps store owners manage sales and product inventory records.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start:dev": "webpack-dev-server --mode development --open --hot",
+    "start": "node server/server.js",
     "test": "jest --coverage && cat ./coverage/lcov.info | coveralls --exit",
     "test:dev": "jest --coverage",
     "build": "webpack mode production",
