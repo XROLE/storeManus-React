@@ -15,6 +15,7 @@ import Products from './admin/Products';
 import AvailableProducts from './admin/AvailableProducts';
 import FinishedProduct from './admin/FinishedProduct';
 import Attendants from './admin/Attendants';
+import '../css/style.css';
 
 class App extends Component {
   constructor(props) {
